@@ -1,3 +1,4 @@
+import java.util.*;
 class Node{
     int data;
     Node next;
@@ -18,12 +19,24 @@ public class MiddleElement {
         return slow.data;
     }
     public static void main(String[] args) {
-        Node head = new Node(20);
-        head.next = new Node(30);
-        head.next.next =  new Node(40);
-        head.next.next.next = new Node(50); 
-        head.next.next.next.next = new Node(60);
-        head.next.next.next.next.next = new Node(70);
+        Scanner sc  = new Scanner(System.in);
+        int n = sc.nextInt();
+        Node head=null,tail=null;
+
+        for(int i=0;i<n;i++){
+            int val = sc.nextInt();
+            Node newNode = new Node(val);
+            if(head==null){
+                head = newNode;
+                tail = newNode;
+            }
+            else{
+                tail.next = newNode;
+                tail=newNode;
+            }
+            
+        }
         System.out.println(middlelement(head));   
+        sc.close();
     }
 }
