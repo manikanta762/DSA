@@ -1,5 +1,5 @@
 import java.util.*;
-//insert at particular position..
+//insert at End position..
 class Node{
     int data;
     Node next;
@@ -9,7 +9,7 @@ class Node{
         this.next = null;
     }
 }
-public class Insertatend {
+public class InsertatEEnd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -26,19 +26,11 @@ public class Insertatend {
                 tail = newNode;
             }
         }
-        System.out.println("Enter the position of element: ");
-        int pos = sc.nextInt();
-        Node temp=head;
-        Node prev =null;
-        for(int i=0;i<pos-1;i++){
-             prev = temp;
-             temp=temp.next;    
-        }
         System.out.println("enter the new value we want to be inserted:");
         int val = sc.nextInt();
         Node neww= new Node(val);
-        neww.next = temp;
-          prev.next = neww;
+         tail.next = neww;
+         tail =neww;
         Node abc = head;
         System.out.println();
         while(abc.next!=null){
