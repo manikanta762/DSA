@@ -8,20 +8,22 @@ class Node{
         this.next = null;
     }
 }
-public class Startingpointll {
+public class Length_of_oop{
     public static int detect(Node head){
         Node fast = head;
         Node slow  = head;
+        
         while(fast!=null && fast.next!=null){
             fast= fast.next.next;
             slow = slow.next;
+            int c =1;
          if(slow == fast){
-            slow = head;
+              slow = slow.next;
              while(slow!=fast){
+                c=c+1;
                 slow = slow.next;
-                fast = fast.next;
              }
-             return slow.data;
+             return c;
          }
         }
         return -1;
@@ -42,7 +44,7 @@ public class Startingpointll {
             tail = newNode;
            }
         }
-           head.next.next.next = head.next;
+           head.next.next.next.next.next = head.next;
        System.out.println( detect(head));
         sc.close();
 
