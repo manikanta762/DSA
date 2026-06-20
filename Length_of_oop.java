@@ -8,6 +8,7 @@ class Node{
         this.next = null;
     }
 }
+//this is the length of the loop
 public class Length_of_oop{
     public static int detect(Node head){
         Node fast = head;
